@@ -1,4 +1,5 @@
 --inspired from the original source code pfp-jun06, developed by Martin Erwig and Steve Kollmansberger in "A Probabilistic Functional Programming Library for Haskell" (https://web.engr.oregonstate.edu/~erwig/pfp/)
+-- Date: April 23rd, 2026
 
 module Library where
 
@@ -143,5 +144,3 @@ type Trans a = a -> Dist a
 sequ :: Monad m => [a -> m a] -> a -> m a
 sequ = foldl (>@>) return
   where f >@> g = (>>= g) . f
-
-
